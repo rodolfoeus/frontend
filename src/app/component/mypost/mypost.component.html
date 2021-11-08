@@ -28,14 +28,14 @@
         <div class="card-body">
             <div *ngIf="checkIfLike(video['users']); else elseBlock">
                 <div class="likeandcount">
-                <span class="material-icons like" (click)="removeLike(video['id'],'video')">
+                <span class="material-icons like" (click)="removeLike(video['id'],'videos')">
                     thumb_up
                     </span>
                     {{video['likes']}}</div>
             </div>
             <ng-template #elseBlock>
                 <div class="likeandcount">
-                    <span class="material-icons" (click)="addLike(video['id'],'video')">
+                    <span class="material-icons" (click)="addLike(video['id'],'videos')">
                     thumb_up_off_alt
                     </span>
                     {{video['likes']}}
