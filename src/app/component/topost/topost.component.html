@@ -1,0 +1,35 @@
+<div class="form-container">
+    <div class="form">
+        <h1>Publicar</h1>
+        <form #toPost="ngForm" (ngSubmit)="postPublication(toPost)" >
+            <input class="hide-input" type="text" value="-1" name="id" id="id" ngModel>
+            <input class="hide-input" type="text" value="none" name="user" id="user" ngModel>
+            <input class="hide-input" type="text" value="0" name="likes" id="likes" ngModel>
+            <input class="hide-input" type="text" value="today" name="date" id="date" ngModel>
+            <input class="hide-input" type="text" value="allUsers" name="users" id="users" ngModel>
+            <label class="hide-input" for="ge" class="form-label">Tipo:</label>
+            <div class="mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="type" id="image" value="images" checked ngModel>
+                    <label class="form-check-label" for="image">Imagen</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="type" id="video" value="videos" ngModel>
+                    <label class="form-check-label" for="video">Video</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="url" class="form-label">Url</label>
+                <input type="text" class="form-control" id="url" placeholder="https://youtu.be/dw9DmYfACso" name="url" ngModel>
+                
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Categoria</label>
+                <input type="text" class="form-control" id="category" name = "category" placeholder="Animales" name="category" ngModel>
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="submit">Publicar</button>
+            </div>
+        </form>
+    </div>
+</div>

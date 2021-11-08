@@ -1,0 +1,25 @@
+<div class="form-container">
+    <div class="form">
+        <h1>UBlog <span class="material-icons">
+            question_answer
+            </span> - Iniciar Sesion</h1>
+            <div *ngIf="activated" class="alert alert-danger" role="alert">
+                Tus credenciales son incorrectas
+              </div>
+        <form  (submit)="validateUser(user.value,pass.value)">
+            <div class="mb-3">
+                <label for="userName" class="form-label">Usuario</label>
+                <input #user type="text" class="form-control" id="userName" placeholder="UserName">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input #pass type="password" class="form-control" id="password" placeholder="Password">
+              
+            </div>
+            <button type="submit" class="btn btn-primary">
+                Iniciar Sesion
+            </button>
+            <h5>¿Aun no tienes cuenta? <a routerLink="/register" routerLinkActive="active">Registrate Aquí</a></h5>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div  class="container-fluid">
+    
+    <div *ngFor="let image of images" class="card">
+        <img src="{{image['url']}}" class="card-img-top">
+        <div class="card-body">
+            <div *ngIf="checkIfLike(image['users']); else elseBlock">
+                <div class="likeandcount">
+                <span class="material-icons like" (click)="removeLike(image['id'],'images')">
+                    thumb_up
+                    </span>
+                    {{image['likes']}}</div>
+            </div>
+            <ng-template #elseBlock>
+                <div class="likeandcount">
+                    <span class="material-icons" (click)="addLike(image['id'],'images')">
+                    thumb_up_off_alt
+                    </span>
+                    {{image['likes']}}
+                </div>
+            </ng-template>
+            <a>{{image['user']}} - {{image['date']}}</a>
+        </div>
+    </div>
+    <div *ngFor="let video of videos" class="card">
+        <iframe class="card-img-top"
+        [src]="getVideoIframe(video['url'])">
+        </iframe>
+        <div class="card-body">
+            <div *ngIf="checkIfLike(video['users']); else elseBlock">
+                <div class="likeandcount">
+                <span class="material-icons like" (click)="removeLike(video['id'],'video')">
+                    thumb_up
+                    </span>
+                    {{video['likes']}}</div>
+            </div>
+            <ng-template #elseBlock>
+                <div class="likeandcount">
+                    <span class="material-icons" (click)="addLike(video['id'],'video')">
+                    thumb_up_off_alt
+                    </span>
+                    {{video['likes']}}
+                </div>
+            </ng-template>
+            <a>{{video['user']}} - {{video['date']}}</a>
+        </div>
+    </div>
