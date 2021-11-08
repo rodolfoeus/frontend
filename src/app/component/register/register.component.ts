@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
   }
 
   registerUser(form: NgForm) {
-    let url = "http://localhost:5000/registerUser";
+    let url =  this.gl.url+"/registerUser";
     const headers = { 'Authorization': 'Bearer my-token', 'My-Custom-Header': 'foobar' };
     const body = { title: 'Angular POST Request Example' };
     this.http.post<any>(url, form.value, { headers }).subscribe(data => {

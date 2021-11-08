@@ -14,7 +14,7 @@ export class UsersComponent implements OnInit {
   constructor(private http: HttpClient,private router: Router) { }
 
   ngOnInit(): void {
-    let url = "http://localhost:5000/getAllUsers";
+    let url =  this.gl.url+"/getAllUsers";
     this.http.get<any>(url).subscribe(data => {
       this.users = Object(data)['result'];
       console.log(this.users);
@@ -37,7 +37,7 @@ export class UsersComponent implements OnInit {
               break;
           }
         }
-        let url = "http://localhost:5000/removeUser?user="+user;
+        let url =  this.gl.url+"/removeUser?user="+user;
         this.http.get<any>(url).subscribe(data =>{
             if(Object(data)['result']){
                 alert('Usuario eliminado')

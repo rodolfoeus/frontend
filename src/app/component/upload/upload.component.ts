@@ -16,7 +16,7 @@ export class UploadComponent{
   constructor(private http: HttpClient,private router: Router) { }
 
   upload(form: NgForm){
-    let url = "http://localhost:5000/loadData";
+    let url =  this.gl.url+"/loadData";
     url = url+"?type="+form.value['type'];
     alert(url)
     this.sendData=localStorage.getItem('data');

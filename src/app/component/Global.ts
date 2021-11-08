@@ -7,5 +7,6 @@ export const Globals = {
     email: "",
     pass: "",
     rol: ""
-  }
+  },
+  url: "https://ublogbackend12.herokuapp.com"
 }

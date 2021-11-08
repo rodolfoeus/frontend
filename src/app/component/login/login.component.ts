@@ -20,7 +20,7 @@ export class LoginComponent {
    }
   
   validateUser(user:string,pass:string){
-    let url = "http://localhost:5000/validateUser";
+    let url =  this.gl.url+"/validateUser";
     url = url +"?user="+user+"&pass="+pass;
     this.http.get(url).subscribe(data => {
               if(!Object(data)["result"]){

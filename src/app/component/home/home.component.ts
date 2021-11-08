@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient,private _sanitizer: DomSanitizer
     ) { }
   ngOnInit(): void {
-    let url = "http://localhost:5000/getPublications"
+    let url = this.gl.url+"/getPublications"
     console.log("Entro");;
     this.http.get<any>(url).subscribe(data => {
       this.images = JSON.parse(JSON.stringify(Object(data)["images"]));
@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
     return like;
   }
   addLike(id:string,type:string){
-    let url = "http://localhost:5000/addLike?";
+    let url =  this.gl.url+"/addLike?";
     url = url +"id="+id+"&";
     url = url +"user="+this.gl.userData.username+"&";
     url = url +"type="+type;
@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
       
   }
   removeLike(id:string,type:string){
-    let url = "http://localhost:5000/removeLike?";
+    let url =  this.gl.url+"/removeLike?";
     url = url +"id="+id+"&";
     url = url +"user="+this.gl.userData.username+"&";
     url = url +"type="+type;

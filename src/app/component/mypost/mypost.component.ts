@@ -27,7 +27,7 @@ export class MypostComponent implements OnInit {
           usrname = this.gl.userData.username
         }
     });
-    let url = "http://localhost:5000/getMyPublications?username="+usrname;
+    let url =  this.gl.url+"/getMyPublications?username="+usrname;
     this.http.get<any>(url).subscribe(data => {
       this.images = JSON.parse(JSON.stringify(Object(data)["images"]));
       this.videos = JSON.parse(JSON.stringify(Object(data)["videos"]));
@@ -54,7 +54,7 @@ export class MypostComponent implements OnInit {
     return like;
   }
   addLike(id:string,type:string){
-    let url = "http://localhost:5000/addLike?";
+    let url =  this.gl.url+"addLike?";
     url = url +"id="+id+"&";
     url = url +"user="+this.gl.userData.username+"&";
     url = url +"type="+type;
@@ -73,7 +73,7 @@ export class MypostComponent implements OnInit {
       
   }
   removeLike(id:string,type:string){
-    let url = "http://localhost:5000/removeLike?";
+    let url =  this.gl.url+"/removeLike?";
     url = url +"id="+id+"&";
     url = url +"user="+this.gl.userData.username+"&";
     url = url +"type="+type;

@@ -18,7 +18,7 @@ export class TopostComponent implements OnInit {
   }
   postPublication(form: NgForm){
       form.value['user']=this.gl.userData.username;
-      let url = "http://localhost:5000/addPublication";
+      let url =  this.gl.url+"/addPublication";
       url = url + "?typeOfP="+form.value['type'];
       delete form.value['type'];
       console.log(form.value);

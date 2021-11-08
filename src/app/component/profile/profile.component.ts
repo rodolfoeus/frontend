@@ -35,7 +35,7 @@ export class ProfileComponent implements OnInit {
           this.isMyProfile =true;
         }
     });
-      let url = "http://localhost:5000/getUser?user="+usrname;
+      let url =  this.gl.url+"/getUser?user="+usrname;
       this.http.get(url).subscribe(data => {
         this.ud = Object(data)["result"];
         this.nameOld= Object(data)["result"]['username'];
@@ -46,7 +46,7 @@ export class ProfileComponent implements OnInit {
       this.router.navigateByUrl("/home");
   }
   registerUser(form: NgForm) {
-    let url = "http://localhost:5000/updatUser?oldUser="+this.nameOld;
+    let url =  this.gl.url+"/updatUser?oldUser="+this.nameOld;
     
     this.http.post<any>(url, form.value).subscribe(data => {
           if (Object(data)['result']) {
