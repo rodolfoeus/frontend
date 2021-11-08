@@ -1,0 +1,55 @@
+<div>
+    <div *ngIf="isMyProfile">
+        <button class="btn btn-danger" (click)="logout()">
+            Cerrar Sesion
+        </button>
+    </div>
+    <div class="form-container">
+        <div class="form">
+            <h1>UBlog <span class="material-icons">
+                question_answer
+                </span> - Modificar Perfil</h1>
+            <form  #signupForm="ngForm" (ngSubmit)="registerUser(signupForm)">
+                <div class="mb-3">
+                    <label for="userName" class="form-label">Nombre</label>
+                    <input type="text"  class="form-control" name="name" id="name" placeholder="Juan Ramirez"  [(ngModel)]="ud.name">
+                </div>
+                <label for="ge" class="form-label">Genero:</label>
+                <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="hombre" value="M" [(ngModel)]="ud.gender">
+                        <label class="form-check-label" for="hombre">Hombre</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="mujer" value="F" [(ngModel)]="ud.gender">
+                        <label class="form-check-label" for="mujer">Mujer</label>
+                      </div>
+                </div>
+                <div class="mb-3">
+                    <label for="userName" class="form-label">Nombre de Usuario</label>
+                    <input type="text" class="form-control" id="userName" placeholder="UserName" name="username" [(ngModel)]="ud.username">
+                    <div *ngIf="errorUser" class="alert alert-danger" role="alert">
+                        Este usuario ya existe en el sistema, prueba con uno diferente.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="userName" class="form-label">Correo Electronico</label>
+                    <input type="text" class="form-control" id="userName" placeholder="user@gmail.com" name="email" [(ngModel)]="ud.email">
+                </div>
+                <div class="mb-3">
+                    <label for="userName" class="form-label">Contraseña</label>
+                    <input type="text" class="form-control" id="userName" placeholder="Xse34Jio#s31" name="password" [(ngModel)]="ud.password">
+                    <input type="text" class="hide" name="rol" [(ngModel)]="ud.rol">
+                    <div *ngIf="errorPass" class="alert alert-danger" role="alert">
+                        La contraseña debe tener al menos 8 caracteres, entre estos caracteres debe contar al
+                        menos con un número y un símbolo. 
+                      </div>
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="submit">Modificar</button>
+                  </div>
+                
+            </form>
+        </div>
+    </div>
+</div>

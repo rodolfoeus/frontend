@@ -1,0 +1,10 @@
+.textVision{
+    margin: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+}
+.textVision h1{
+    margin-bottom: 20px;
+    color: rgb(24, 117, 238);
+}

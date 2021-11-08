@@ -1,0 +1,22 @@
+.textMision{
+    margin: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.textMision h1{
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(24, 117, 238);
+}
+span{
+    color: rgb(56, 47, 134);
+    margin-right: 10px;
+}
+p{
+    margin-top: 30px;
+    padding-left: 35%;
+    color: rgb(20, 16, 58);
+    display: flex;
+    align-items: center;
+}

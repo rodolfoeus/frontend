@@ -1,0 +1,25 @@
+.form-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.form{
+    width: 40%;
+}
+.form h1{
+    text-align: center;
+}
+form{
+    margin-top: 30px;
+    border: solid 1px rgb(72, 51, 112);
+    padding: 50px 50px 15px 50px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    margin-bottom: 30px;
+}
+.hide-input{
+    display: none;
+}
